@@ -47,9 +47,20 @@ button{
 button:hover {
     background-color: #831bbf;
 }
+
+#loadingSpinner {
+    display: block;
+    margin: 1.2rem auto;
+}
+
+
 #loadingSpinner, #summaryResult, #errorMessage {
     display: none;
     margin-top: 1.2rem;
+}
+#summaryResult h2 {
+    color: #330681;
+    text-align: center;
 }
 #summaryResult {
     background-color: #f9f9f9;
