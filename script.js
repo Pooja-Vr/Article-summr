@@ -1,5 +1,5 @@
-
-const API_KEY = 'YOUR_RAPIDAPI_KEY'; // Replace with your actual RapidAPI key
+//============  Code for Replace with your actual RapidAPI key ==============
+const API_KEY = 'YOUR_RAPIDAPI_KEY'; 
 
 document.getElementById('summarizeForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -9,7 +9,7 @@ document.getElementById('summarizeForm').addEventListener('submit', async (e) =>
     const summaryText = document.getElementById('summaryText');
     const errorMessage = document.getElementById('errorMessage');
 
-    // Reset previous states
+    // ============= Reset previous states for new request ==============
     loadingSpinner.style.display = 'block';
     summaryResult.style.display = 'none';
     errorMessage.style.display = 'none';
@@ -25,6 +25,9 @@ document.getElementById('summarizeForm').addEventListener('submit', async (e) =>
             body: JSON.stringify({ url: url, length: 3 })
         });
 
+
+        // ============= Handle if not found  response ==============
+
         if (!response.ok) {
             throw new Error('Failed to fetch summary');
         }
@@ -33,7 +36,8 @@ document.getElementById('summarizeForm').addEventListener('submit', async (e) =>
         loadingSpinner.style.display = 'none';
         summaryResult.style.display = 'block';
         summaryText.textContent = data.summary;
-    } catch (error) {
+    } 
+    catch (error) {
         loadingSpinner.style.display = 'none';
         errorMessage.style.display = 'block';
         errorMessage.textContent = 'Error: Unable to summarize the article. Please check the URL and try again.';
